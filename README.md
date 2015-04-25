@@ -1,5 +1,5 @@
 # RSSTS
-RSSTS = Report ScreenShot To Slack
+RSSTS = Report Screenshot To Slack
 
 You can report a screenshot of your application to slack channels that you like.
 
