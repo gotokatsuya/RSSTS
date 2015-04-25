@@ -14,7 +14,7 @@ public class YourApplication extends Application {
         // Initialize Rssts
         Rssts.initialize(true, "your slack token", "your slack channel ID");
 
-        // Start Rsster of Your Application
+        // Start Rsstser of Your Application
         Rsstser.start(this);
     }
 
@@ -22,7 +22,7 @@ public class YourApplication extends Application {
     @Override
     public void onTerminate() {
 
-        // Stop Rsster of Your Application
+        // Stop Rsstser of Your Application
         Rsstser.stop(this);
         super.onTerminate();
     }
