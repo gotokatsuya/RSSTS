@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RSSTS</string>
+
+    <string name="notification_title">Report to slack</string>
+    <string name="notification_description">You can report screenshot of %1$s to %2$s slack channel</string>
+    <string name="failed_to_take_screen_shot">Failed to take screenshot</string>
+    <string name="successful_reporting_to_slack">Successful Reporting to Slack</string>
+    <string name="failed_to_report_to_slack">Failed to report to slack</string>
+    <string name="just_a_moment">Just a moment</string>
+
+</resources>
