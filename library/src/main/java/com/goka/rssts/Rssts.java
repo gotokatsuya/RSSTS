@@ -7,19 +7,35 @@ import com.goka.rssts.request.SlackClient;
  */
 public class Rssts {
 
-    // Call on application class
+    /**
+     *
+     * Initialize method. Call on application class.
+     *
+     * @param enableLog
+     * @param slackToken
+     * @param slackChannels  //Comma separated list of channels to share the file into
+     */
+    public static void initialize(boolean enableLog, String slackToken, String slackChannels) {
+        Config.ENABLE_LOG = enableLog;
 
-    public static void initialize(boolean debug, String slackToken, String slackChannels) {
-        Config.DEBUG = debug;
-
-        Config.TOKEN = slackToken;
-        Config.CHANNELS = slackChannels;
+        Config.SLACK_TOKEN = slackToken;
+        Config.SLACK_CHANNELS = slackChannels;
 
         SlackClient.initialize();
     }
 
-    // Release
+    // ENABLE LOG MODE for debug
     public static void initialize(String slackToken, String slackChannels) {
-        initialize(false, slackToken, slackChannels);
+        initialize(true, slackToken, slackChannels);
     }
+
+
+    public static void setSlackToken(String slackToken) {
+        Config.SLACK_TOKEN = slackToken;
+    }
+
+    public static void setSlackChannels(String slackChannels) {
+        Config.SLACK_CHANNELS = slackChannels;
+    }
+
 }

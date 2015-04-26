@@ -37,7 +37,7 @@ public class ReportNotification {
         String applicationName = AppUtils.getApplicationName(context).toString();
         String title = context.getResources().getString(R.string.notification_title);
         String description = context.getResources().getString(R.string.notification_description, applicationName,
-                Config.CHANNELS);
+                Config.SLACK_CHANNELS);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
         builder.setTicker(title);

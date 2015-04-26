@@ -24,6 +24,7 @@ public class Rsstser {
         }
     };
 
+
     public Rsstser(Application application) {
         this.activityLifecycleCallbacksAdapter = new ActivityLifecycleCallbacksAdapter(application, callback);
     }

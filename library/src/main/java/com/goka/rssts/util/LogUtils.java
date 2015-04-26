@@ -10,13 +10,13 @@ import android.util.Log;
 public class LogUtils {
 
     public static void V(String tag, String msg) {
-        if (Config.DEBUG) {
+        if (Config.ENABLE_LOG) {
             Log.v(tag, msg);
         }
     }
 
     public static void D(String tag, String msg) {
-        if (Config.DEBUG) {
+        if (Config.ENABLE_LOG) {
             Log.d(tag, msg);
         }
     }

@@ -5,10 +5,10 @@ package com.goka.rssts;
  */
 public class Config {
 
-    public static boolean DEBUG = false;
+    public static boolean ENABLE_LOG = false;
 
     // SLACK Configuration
-    public static String TOKEN = "";
-    public static String CHANNELS = "";
+    public static String SLACK_TOKEN = "";
+    public static String SLACK_CHANNELS = "";
 
 }

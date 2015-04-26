@@ -33,7 +33,7 @@ public class SlackClient {
                 @Part("token") String token,
                 @Part("title") String title,
                 @Part("file") TypedFile screenShotFile,
-                @Part("channels") String channels, //Comma separated list of channels to share the file into
+                @Part("channels") String channels,
                 Callback<JSONObject> callback
         );
     }
@@ -73,6 +73,6 @@ public class SlackClient {
      */
     public static void uploadScreenShot(String title, File screenshotFile, Callback<JSONObject> callback) {
         TypedFile typedScreenshotFile = new TypedFile("multipart/form-data", screenshotFile);
-        sSlack.sendScreenShot(Config.TOKEN, title, typedScreenshotFile, Config.CHANNELS, callback);
+        sSlack.sendScreenShot(Config.SLACK_TOKEN, title, typedScreenshotFile, Config.SLACK_CHANNELS, callback);
     }
 }

@@ -1,15 +1,13 @@
-package com.goka.sample.application;
+package com.goka.sample.application.suport;
 
 import com.goka.rssts.Rssts;
+import com.goka.rssts.compat.LifecycleCallbacksSupportApplication;
 import com.goka.sample.AppConfig;
-import com.goka.sample.application.suport.SupportRsstser;
-
-import android.app.Application;
 
 /**
  * Created by katsuyagoto on 2015/04/26.
  */
-public class SampleApplication extends Application {
+public class SampleSupportApplication extends LifecycleCallbacksSupportApplication {
 
     @Override
     public void onCreate() {
