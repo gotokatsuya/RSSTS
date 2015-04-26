@@ -2,7 +2,6 @@ package com.goka.sample.application;
 
 import com.goka.rssts.Rssts;
 import com.goka.sample.AppConfig;
-import com.goka.sample.application.suport.SupportRsstser;
 
 import android.app.Application;
 
@@ -21,7 +20,7 @@ public class SampleApplication extends Application {
             Rssts.initialize("your slack token", "your slack channel ID");
 
             // Start Rsstser of Your Application
-            SupportRsstser.start(this);
+            Rsstser.start(this);
         }
 
     }
@@ -32,7 +31,7 @@ public class SampleApplication extends Application {
 
         if (AppConfig.DEBUG) {
             // Stop Rsstser of Your Application
-            SupportRsstser.stop(this);
+            Rsstser.stop(this);
         }
 
         super.onTerminate();
