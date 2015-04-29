@@ -2,6 +2,7 @@
 RSSTS = Report Screenshot To Slack
 
 You can report a screenshot of your application to slack channels that you like.
+Scressnshot may be sent when you tap a notification of this library.
 
 ## How to use
 ```java
