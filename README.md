@@ -54,3 +54,7 @@ dependencies {
 
 Check [this repository](https://github.com/kaneshin/RSSTS) !
 
+
+## OSX
+
+Check [this repository](https://github.com/kaneshin/RSSTSOSX) !
