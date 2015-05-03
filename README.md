@@ -5,6 +5,7 @@ You can report a screenshot of your application to slack channels that you like.
 
 Screenshot may be sent when you tap a notification of this library.
 
+![](https://img.shields.io/badge/Android%20Arsenal-RSSTS-brightgreen.svg?style=flat)
 ## How to use
 ```java
 public class YourApplication extends Application {
