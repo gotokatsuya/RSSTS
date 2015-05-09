@@ -3,6 +3,9 @@ RSSTS = Report Screenshot To Slack
 
 You can report a screenshot of your application to slack channels that you like.
 
+Screenshot may be sent when you tap a notification of this library.
+
+![](https://img.shields.io/badge/Android%20Arsenal-RSSTS-brightgreen.svg?style=flat)
 ## How to use
 ```java
 public class YourApplication extends Application {
@@ -45,3 +48,12 @@ dependencies {
     compile 'com.github.goka.rssts:library:1.0.0'
 }
 ```
+
+## iOS
+
+Check [this repository](https://github.com/kaneshin/RSSTS) !
+
+
+## OSX
+
+Check [this repository](https://github.com/kaneshin/RSSTSOSX) !
