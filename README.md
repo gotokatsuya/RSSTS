@@ -3,7 +3,11 @@ RSSTS = Report Screenshot To Slack
 
 You can report a screenshot of your application to slack channels that you like.
 
-Screenshot may be sent when you tap a notification of this library.
+### When one activity starts, RSSTS's notification will be shown.
+![](https://github.com/gotokatsuya/RSSTS/blob/master/notification1.png)
+
+### When you tap this notification, Screenshot will be sent to a slack channel.
+![](https://github.com/gotokatsuya/RSSTS/blob/master/notification2.png)
 
 ![](https://img.shields.io/badge/Android%20Arsenal-RSSTS-brightgreen.svg?style=flat)
 ## How to use
