@@ -38,12 +38,10 @@ Check [this sample](https://github.com/gotokatsuya/RSSTS/tree/master/app/src/mai
 ## Gradle
 ```java
 repositories {
-    maven {
-        url 'http://raw.github.com/gotokatsuya/RSSTS/master/repository/'
-    }
+    jcenter()
 }
 
 dependencies {
-    compile 'com.goka:rssts:1.0.0'
+    compile 'com.github.goka.rssts:library:1.0.0'
 }
 ```

@@ -1,4 +1,24 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+group = 'com.github.goka.rssts'
+version = '1.0.0'
+
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 android {
     compileSdkVersion 22
@@ -32,17 +52,79 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3.1'
 }
 
-def repo = new File(rootDir, "repository")
 
-apply plugin: 'maven'
+def siteUrl = 'https://github.com/gotokatsuya/RSSTS'
+def gitUrl = 'https://github.com/gotokatsuya/RSSTS.git'
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository url: "file://${repo.absolutePath}"
-            pom.version = '1.0.0'
-            pom.groupId = 'com.goka'
-            pom.artifactId = 'rssts'
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty('bintray.user')
+    key = properties.getProperty('bintray.key')
+
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        name = 'RSSTS'
+        websiteUrl = siteUrl
+        issueTrackerUrl = 'https://github.com/gotokatsuya/RSSTS/issues'
+        vcsUrl = gitUrl
+        licenses = ['Apache-2.0']
+        labels = ['Android']
+        publicDownloadNumbers = true
+    }
+}
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                name 'RSSTS'
+                url siteUrl
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id properties.getProperty('bintray.id')
+                        name properties.getProperty('bintray.name')
+                        email properties.getProperty('bintray.email')
+                    }
+                }
+                scm {
+                    connection 'https://github.com/gotokatsuya/RSSTS.git'
+                    developerConnection 'https://github.com/gotokatsuya/RSSTS.git'
+                    url siteUrl
+                }
+            }
         }
     }
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+task findConventions << {
+    println project.getConvention()
 }
